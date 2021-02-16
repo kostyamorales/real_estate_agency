@@ -8,7 +8,7 @@ def fill_owner_pure_phone(apps, shema_editor):
     Flat = apps.get_model('property', 'Flat')
     for flat in Flat.objects.all():
         parsed_phone_number = parse(flat.owners_phonenumber, 'RU')
-        flat.owner_pure_phone = 'Ошибка в номере владельца'
+        flat.owner_pure_phone = None
         if is_possible_number(parsed_phone_number) and is_valid_number(parsed_phone_number):
             flat.owner_pure_phone = format_number(parsed_phone_number, PhoneNumberFormat.E164)
         flat.save()

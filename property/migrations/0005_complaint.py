@@ -20,7 +20,8 @@ class Migration(migrations.Migration):
                 ('complainer',
                  models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
                 (
-                'complaining_flat', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='property.Flat')),
+                    'complaining_flat',
+                    models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='property.Flat')),
             ],
         ),
     ]
